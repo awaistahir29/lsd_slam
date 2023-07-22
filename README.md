@@ -1,4 +1,24 @@
 # LSD-SLAM: Large-Scale Direct Monocular SLAM
+## Quick Start
+### Step 1:
+Open the terminal and launch realsense D435 package.
+
+`
+roslaunch realsense2_camera rs_d435_camera_with_model.launch 
+`
+
+This will provide list of topics related to the the camera D435.
+
+### Step 2:
+Run the lsd_slam_node, which will subscribe to these two topics `/camera/color/image_raw` & `/camera/color/camera_info`. Run lsd_slam_viewer to see the results.
+
+`
+rosrun lsd_slam_core live_slam /image:=/camera/color/image_raw camera_info:=/camera/color/camera_info
+`
+
+`
+rosrun lsd_slam_viewer viewer
+`
 
 ## This is an updated version to work on Ubuntu 20.04 + ROS Noetic
 
